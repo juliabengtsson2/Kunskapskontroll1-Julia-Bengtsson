@@ -1,7 +1,5 @@
 
 
-
-
 // Skapar ett button-element till återställningsfunktionen.
 let resetBtn = document.createElement('button');
  
@@ -56,7 +54,18 @@ function resetAll(){
     let socialMedia = articleFooter[2];
     socialMedia.style.display = 'flex';
 
-    removeElement();
+    // Tar bort bordern, ändrar tillbaka färgen till svart på menyerna och tar bort bakgrundsfärgen.
+    homeElement.style.border = 'none';
+    homeElement.style.color = 'black';
+    homeElement.style.background = 'white';
+
+    productsElement.style.border = 'none';
+    productsElement.style.color = 'black';
+    productsElement.style.background = 'white';
+
+    contactElement.style.border = 'none';
+    contactElement.style.color = 'black';
+    contactElement.style.background = 'white';
 }
 
 
@@ -350,19 +359,26 @@ home.addEventListener('click',
     }
 )
 
-
-h3Menu.addEventListener('click', // FUNKAR INTE MED RESET 
+// Skapa en eventlistner när användaren klickar på Menu i footern.
+h3Menu.addEventListener('click', 
     function(event){
+        //Selectar alla article-element
         let article = document.querySelectorAll('article');
+        //Väljer ut vilket specefikt article-element jag vill ha
         let articleElement = article[3];
 
+        // Skapar ett 'a' element
         let aHrefElement = document.createElement('a');
+        //Tilldelar den en länk som inte går nånstans.
         aHrefElement.href = '#';
+        // Lägger till text
         aHrefElement.innerText = 'About us';
+        // Pushar elementet in i article
         articleElement.appendChild(aHrefElement);
     }
 )
 
+/* 
 function removeElement(){
     let aHrefElement = document.createElement('a');
     aHrefElement.href = '#';
@@ -371,11 +387,10 @@ function removeElement(){
     aHrefElement.setAttribute('class', 'removeClass');
     let removeLink = querySelector('.removeClass');
     console.log(removeLink)
-}
+} */ // Försök till att ta bort elementet med remove() metoden..
 
 
 /* Ta bort den sista UL (social media) i footern */
-
 // Selectar alla article-element
 let lastArticle = document.querySelectorAll('article');
 // Väljer ut det sista index
@@ -396,4 +411,39 @@ function removeSocialMedia(){
     socialMedia.style.display = 'none';
 }
 
+// Selectar alla a-element och väljer ut specifikt vilket.
+let homeAgain = document.querySelectorAll('a');
+let homeElement = homeAgain[0];
+
+// Selectar alla a-element och väljer ut specifikt vilket.
+let products = document.querySelectorAll('a');
+let productsElement = products[1];
+
+// Selectar alla a-element och väljer ut specifikt vilket.
+let contact = document.querySelectorAll('a');
+let contactElement = contact[2];
+
+//Lägger till en keydown eventlistner i html
+html.addEventListener('keydown',
+    function(event){
+        // Klicka på q eller Q så ändras menyerna i navigationen.
+        if(event.key === 'q' || event.key === 'Q'){
+            // Home styling
+            homeElement.style.border = '5px solid yellow';
+            homeElement.style.padding = '10px';
+            homeElement.style.color = 'yellow';
+            homeElement.style.backgroundColor = 'black';
+            // Products styling
+            productsElement.style.border = '5px solid purple';
+            productsElement.style.padding = '10px';
+            productsElement.style.color = 'purple';
+            productsElement.style.backgroundColor = 'black';
+            // Contact styling
+            contactElement.style.border = '5px solid orange';
+            contactElement.style.padding = '10px';
+            contactElement.style.color = 'orange';
+            contactElement.style.backgroundColor = 'black';
+        }
+    }
+)
 

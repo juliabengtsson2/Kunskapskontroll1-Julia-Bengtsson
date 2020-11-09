@@ -10,9 +10,11 @@
 
 -När användaren klickar på mitten knappen tas det sista ul-elementet bort från footern (social media). Sedan när man klickar på resetknappen kommer elementet tillbaka.
 
--Klicka på den högra bilden och knappen i mitten och rubrikerna i footern byter färg till blå. 
+-Klicka på den högra bilden så ändras knappen i mitten bakgrundsfärg och rubrikerna i footern till blå. 
 
 -Klicka på "a" / "A" så ändras underrubriken i sista produkten till "I'm blue, not green".
+
+- Klicka på 'q' / 'Q' så kommer 'Home' menyn i navigationen ändra färg till gul och få en border som är gul. 'Products' byter färg till lila och får en border som också är lila. 'Contact' ändrar färg till orange och får en border som är orange. Alla tre elementen får även en backgrundsfärg som är svart. Detta ändras också tillbaka till orginalet när användern klickar på reset-knappen. 
 
 -Klicka på Menu i footern så läggs det till ett element "about us" i listan. (Funkar inte att ändra tillbaka..)
 
