@@ -1,17 +1,6 @@
-/* Måste vara med: 
-
--Ta bort minst 1 element (Måste läggas till igen när man trycker på återställningsknappen):
-
--Lägg till en lista var som helst i DOMen (måste tas bort med resetknappen):
-
--Listan ska innehålla flera li element:
 
 
--Varje li element ska ha en synlig border. (Valfritt utseende)
 
-*/
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Skapar ett button-element till återställningsfunktionen.
 let resetBtn = document.createElement('button');
@@ -62,9 +51,12 @@ function resetAll(){
     //Ändrar tillbaka h3 texten till 'Water'
     waterElement.innerText = 'Water';
 
-    //Kallar på functionen som ska ta bort ul-elementet jag skapat
-    removeUl();
-   
+    // Lägger till 'social media' ul i footern igen
+    let articleFooter = document.querySelectorAll('section article');
+    let socialMedia = articleFooter[2];
+    socialMedia.style.display = 'flex';
+
+    removeElement();
 }
 
 
@@ -312,6 +304,7 @@ html.addEventListener('keydown',
     }
 )
 
+
 // Selectar det första a-elementet.
 let home = document.querySelector('a');
 // Skapar en array/lista som ska printas ut i loopen.
@@ -353,23 +346,9 @@ home.addEventListener('click',
     ul.children[0].style.fontSize = '1rem';
     ul.children[0].style.color = 'pink';
     ul.children[0].style.border = 'none';
-        
+    
     }
 )
-
-function removeUl(){
-    console.log('hello')
-}
-
-
-
-
-
-
-
-
-
-
 
 
 h3Menu.addEventListener('click', // FUNKAR INTE MED RESET 
@@ -384,22 +363,37 @@ h3Menu.addEventListener('click', // FUNKAR INTE MED RESET
     }
 )
 
+function removeElement(){
+    let aHrefElement = document.createElement('a');
+    aHrefElement.href = '#';
+    aHrefElement.innerText = 'About us';
 
-buyBtnTwo.addEventListener('click', // FUNKAR INTE MED RESET 
+    aHrefElement.setAttribute('class', 'removeClass');
+    let removeLink = querySelector('.removeClass');
+    console.log(removeLink)
+}
+
+
+/* Ta bort den sista UL (social media) i footern */
+
+// Selectar alla article-element
+let lastArticle = document.querySelectorAll('article');
+// Väljer ut det sista index
+let articleLast = lastArticle[5];
+
+buyBtnTwo.addEventListener('click',
     function(event){
-        let lastArticle = document.querySelectorAll('article');
-        let articleLast = lastArticle[5];
-        console.log(articleLast)
-        
-        let insta = document.querySelectorAll('article a');
-        let instagram = insta[5];
-        console.log(instagram)
-
-        articleLast.removeChild(instagram);
+        //Kallar på funktionen nedanför
+        removeSocialMedia();
     }
 )
 
+//Tar bort social media, ul-elementet
+function removeSocialMedia(){
+    let articleFooter = document.querySelectorAll('section article');
 
-
+    let socialMedia = articleFooter[2];
+    socialMedia.style.display = 'none';
+}
 
 
