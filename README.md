@@ -16,6 +16,6 @@
 
 - Klicka på 'q' / 'Q' så kommer 'Home' menyn i navigationen ändra färg till gul och få en border som är gul. 'Products' byter färg till lila och får en border som också är lila. 'Contact' ändrar färg till orange och får en border som är orange. Alla tre elementen får även en backgrundsfärg som är svart. Detta ändras också tillbaka till orginalet när användern klickar på reset-knappen. 
 
-- Klicka på Menu i footern så läggs det till ett element "about us" i listan. (Funkar inte att ändra tillbaka..)
+- Klicka på Menu i footern så läggs det till ett element "about us" i listan, klicka på reset-Knappen så försvinner elementet.
 
-- Klicka på Home i menyn, navgation så läggs en ul/li lista till innan footern. (Lyckades inte ta bort den heller..)
+- Klicka på Home i menyn, navgation så läggs en ul/li lista till innan footern, klicka på reset-Knappen så försvinner elementet.
