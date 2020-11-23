@@ -66,6 +66,10 @@ function resetAll(){
     contactElement.style.border = 'none';
     contactElement.style.color = 'black';
     contactElement.style.background = 'white';
+
+
+    removeElement();
+
 }
 
 
@@ -376,18 +380,26 @@ h3Menu.addEventListener('click',
         // Pushar elementet in i article
         articleElement.appendChild(aHrefElement);
     }
-)
+);
 
-/* 
 function removeElement(){
-    let aHrefElement = document.createElement('a');
-    aHrefElement.href = '#';
-    aHrefElement.innerText = 'About us';
+    let article = document.querySelectorAll('article');
+    let articleElement = article[3];
 
-    aHrefElement.setAttribute('class', 'removeClass');
+    let aHrefElement = document.querySelectorAll('a');
+    let aboutUs = aHrefElement[6];
+
+    aboutUs.remove();
+
+
+    /* aHrefElement.href = '#';
+    aHrefElement.innerText = 'About us'; */
+
+    /* aHrefElement.setAttribute('class', 'removeClass');
     let removeLink = querySelector('.removeClass');
-    console.log(removeLink)
-} */ // Försök till att ta bort elementet med remove() metoden..
+    console.log(removeLink) */
+}
+// Försök till att ta bort elementet med remove() metoden..
 
 
 /* Ta bort den sista UL (social media) i footern */
