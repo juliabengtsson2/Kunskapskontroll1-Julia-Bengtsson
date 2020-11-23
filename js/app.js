@@ -50,8 +50,8 @@ function resetAll(){
     waterElement.innerText = 'Water';
 
     // Lägger till 'social media' ul i footern igen
-    let articleFooter = document.querySelectorAll('section article');
-    let socialMedia = articleFooter[2];
+    let articleFooter = document.querySelectorAll('article');
+    let socialMedia = articleFooter[5];
     socialMedia.style.display = 'flex';
 
     // Tar bort bordern, ändrar tillbaka färgen till svart på menyerna och tar bort bakgrundsfärgen.
@@ -67,9 +67,11 @@ function resetAll(){
     contactElement.style.color = 'black';
     contactElement.style.background = 'white';
 
-
+    // Kallar på functionen som tar bort 'About us' elementet.
     removeElement();
 
+    // Kallar på functionen som tar bort ul-elementet som jag skapat.
+    removeList();
 }
 
 
@@ -359,9 +361,17 @@ home.addEventListener('click',
     ul.children[0].style.fontSize = '1rem';
     ul.children[0].style.color = 'pink';
     ul.children[0].style.border = 'none';
-    
     }
 )
+
+//Skapar en funktion för att ta bort min ulLista.
+function removeList(){
+    // Selectar det första och enda ul-elementet
+    let ul = document.querySelector('ul');
+    // Använder remove för att ta bort elementet.
+    ul.remove();
+}
+
 
 // Skapa en eventlistner när användaren klickar på Menu i footern.
 h3Menu.addEventListener('click', 
@@ -382,24 +392,19 @@ h3Menu.addEventListener('click',
     }
 );
 
+// Skapar en function som tar bort elementet jag tidigare har skapat, 'about us'-elementet.
 function removeElement(){
+    // Selectar parent för mitt utvalda element som ska tas bort.
     let article = document.querySelectorAll('article');
     let articleElement = article[3];
 
+    // Selectar mitt utvalda element
     let aHrefElement = document.querySelectorAll('a');
     let aboutUs = aHrefElement[6];
 
+    // Använder metoden remove för att ta bort elementet med reset-knappen.
     aboutUs.remove();
-
-
-    /* aHrefElement.href = '#';
-    aHrefElement.innerText = 'About us'; */
-
-    /* aHrefElement.setAttribute('class', 'removeClass');
-    let removeLink = querySelector('.removeClass');
-    console.log(removeLink) */
 }
-// Försök till att ta bort elementet med remove() metoden..
 
 
 /* Ta bort den sista UL (social media) i footern */
@@ -417,11 +422,13 @@ buyBtnTwo.addEventListener('click',
 
 //Tar bort social media, ul-elementet
 function removeSocialMedia(){
-    let articleFooter = document.querySelectorAll('section article');
+    let articleFooter = document.querySelectorAll('article');
 
-    let socialMedia = articleFooter[2];
+    let socialMedia = articleFooter[5];
     socialMedia.style.display = 'none';
 }
+
+
 
 // Selectar alla a-element och väljer ut specifikt vilket.
 let homeAgain = document.querySelectorAll('a');
